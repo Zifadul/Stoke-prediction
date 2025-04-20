@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stroke Risk Prediction</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🧠 Stroke Risk Prediction</h1>
+      <form method="POST">
+        <label>Gender:</label>
+        <select name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label>Age:</label>
+        <input type="number" name="age" min="0" max="100" step="1" required />
+
+        <label>Hypertension:</label>
+        <select name="hypertension" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+
+        <label>Heart Disease:</label>
+        <select name="heart_disease" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
+
+        <label>Average Glucose Level:</label>
+        <input type="number" name="glucose" step="0.1" required />
+
+        <label>BMI:</label>
+        <input type="number" name="bmi" step="0.1" required />
+
+        <label>Smoking Status:</label>
+        <select name="smoking" required>
+          <option value="0">Never Smoked</option>
+          <option value="1">Formerly Smoked</option>
+          <option value="2">Smokes</option>
+        </select>
+
+        <button type="submit">Predict</button>
+      </form>
+
+      {% if result is not none %}
+      <div class="result">
+        <h2>Prediction Result: <span>{{ result }}</span></h2>
+      </div>
+      {% endif %}
+
+      <footer>
+        <p>
+          Created by Zifadul Alam Zishan | BSc (Hons) Computer Science Final
+          Year Project
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
